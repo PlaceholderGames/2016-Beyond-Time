@@ -1,0 +1,74 @@
+GIT COMMANDS
+------------
+
+These are only very basic, simple git commands. Certain things that will probably need to be done
+every now and then, are by no means covered in this.
+------------------------------------------------------------------------------------------------
+
+git init
+-> creates an empty repository on local machine.
+
+git clone <Remote-web-address>
+-> creates a new repository on your local machine, that will be in the same state as
+the remote repository at <Remote-web-address>.
+
+
+git config --global --edit
+-> used for setting profile information (username, email)
+(Will open the config file in an Vim editor. To begin typing press [i].
+To save the changes you make and quit, press escape to exit insert mode
+and type- [:] then [wq] and hit [enter])
+
+git config --global user.name "User Name"
+-> a way to set user name in profile information without going through the editor.
+
+git config --gloabl user.email example@example.com
+-> same as above for email
+
+
+git status
+-> outputs current status of local repo (checked out branches, staged and unstaged changes, etc.)
+
+git add .
+-> stages all changes, ready to be commited.
+
+git add path/fileName
+-> stages specific file ready to be commited.
+
+git commit -m "some commit message"
+-> commits staged changes and gives it a custom commit message (Double quotes are important.
+To make the message multiple lines, open the double quotes, but do not close them. In this state,
+pressing enter will create a new line, and NOT commit.)
+
+
+git fetch
+-> This will fetch all updated information form the remote repository origin.
+So if there have been any changes to origin, it will update your local repository
+information to show that.
+
+
+git push origin master
+-> pushes commit to remote. (in this case the remote that will be pushed to
+is the origin remote, and the branch that will be pushed from your machine
+to the remote repository, is the master branch.)
+
+
+git checkout <branch>
+-> this will check out the <branch> specified. This makes it your currently working branch.
+Most things you do in git will apply to the checked out branch.
+
+git checkout -b "name of branch"
+-> creates new branch on your local repository and checks it out.
+
+
+git branch "name of the branch"
+-> creates a new branch on your local repository.
+
+git branch -d "branch name"
+-> safe operation to delete a branch (it won't delete if it has unmerged changes)
+
+git branch -a
+-> shows all branches (remote repositroy and local repository)
+
+git branch -r
+-> shows only remote repository branches
